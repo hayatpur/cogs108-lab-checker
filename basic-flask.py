@@ -37,11 +37,11 @@ def index():
             for row in MEMORY['output']:
                 if row['student'] == student_id:
                     if row['effort'] == 'Yes':
-                        student_grade = "✅"
+                        student_grade = "good"
                     elif row['effort'] == 'No':
-                        student_grade = "❌"
+                        student_grade = "bad"
                     else:
-                        student_grade = "❓"
+                        student_grade = "ungraded"
                     break
             
             student_grade_status[student_id] = student_grade

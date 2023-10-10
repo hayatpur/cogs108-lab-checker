@@ -42,9 +42,24 @@
             <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
               <ul class="list-group">
                 {% for student_id, value in students.items()|sort %}
+                  {% set btn_value = '' %}
+                  {% set emoji = '' %}
+                  {% if value == 'good' %}
+                      {% set btn_value = 'btn-success' %}
+                      {% set emoji = '👍' %}
+                  {% elif value == 'bad' %}
+                      {% set btn_value = 'btn-danger' %}
+                      {% set emoji = '👎' %}
+                  {% elif value == 'ungraded' %}
+                      {% set btn_value = 'btn-light' %}
+                      {% set emoji = '🤷' %}
+                  {% else %}
+                      {% set btn_value = 'btn-light' %}
+                      {% set emoji = '🤷' %}
+                  {% endif %}
                   <li class="list-group-item text-center">
-                    <button class="btn btn-light" onclick="location.href='/go_to_{{ student_id }}'">
-                      {{ student_id }} grade: {{ value }}
+                    <button class="btn {{btn_value}}" onclick="location.href='/go_to_{{ student_id }}'">
+                      {{ student_id }} grade: {{ emoji }}
                     </button>
                   </li>
                 {% endfor %}
