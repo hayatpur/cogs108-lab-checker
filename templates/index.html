@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lab Grader</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<body style="height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="text-center">
+            <!-- Button to open the modal -->
+            <div>
+                <button type="button" class="btn btn-info mb-3" data-toggle="modal" data-target="#studentModal">
+                    Show Students
+                </button>
+                <button type="button" class="btn btn-light mb-3" onclick="location.href='/download'">
+                    Download CSV
+                </button>
+            </div>
+
+
+            <hr>
+
+            <h1>{{ student }}</h1>
+            <button class="btn btn-primary" onclick="location.href='/show_diff'">Look at Diff</button>
+   
+        </div>
+    </div>
+
+    <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">List of Students</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+              <ul class="list-group">
+                {% for student_id, value in students.items()|sort %}
+                  <li class="list-group-item text-center">
+                    <button class="btn btn-light" onclick="location.href='/go_to_{{ student_id }}'">
+                      {{ student_id }} grade: {{ value }}
+                    </button>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    /* if the user presses the 'd' key or 'space', redirect to /show_diff */
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'd' || event.key === ' ') {
+            window.location.href = '/show_diff';
+        }
+    });
+</script>
+</html>

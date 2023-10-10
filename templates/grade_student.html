@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lab Grader</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<body style="height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="text-center">
+            <h1>{{ student }}</h1>
+            <hr>
+            <div>
+                <h2>Did {{ student }} show concerted effort?</h2>
+                <div>
+                    <button class="btn btn-success btn-lg mr-2" onclick="location.href='/yes_effort'">Yes</button>            
+                    <button class="btn btn-danger btn-lg mr-2" onclick="location.href='/no_effort'">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    /* if user presses the 'y' key, redirect to /yes_effort */
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'y') {
+            window.location.href = '/yes_effort';
+        }
+    });
+
+    /* if user presses the 'n' key, redirect to /no_effort */
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'n') {
+            window.location.href = '/no_effort';
+        }
+    });
+</script>
+</html>

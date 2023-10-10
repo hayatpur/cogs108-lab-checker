@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Lab Grader</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<body style="height: 100vh;">
+    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+        <div class="text-center">    
+            <h1>{{ student }}</h1>
+            <hr>
+            <h2>Close Diff Tab when finished</h2>
+        </div>
+    </div>
+</body>
+
+<!-- Script that checks the '/is_done' route every .5 seconds -- if it is done, go to that route. otherwise, do nothing -->
+<script>
+    function check_done() {
+        fetch('/is_done')
+            .then(response => response.json())
+            .then(data => {
+                if (data['done']) {
+                    location.href = '/grade_student';
+                }
+            });
+    }
+    setInterval(check_done, 500);
+</script>
+</html>

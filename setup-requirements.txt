@@ -1,0 +1,7 @@
+conda create --name "cogs-18" python=3.8
+conda activate cogs-18
+
+conda install flask
+pip install nbdime
+
+python basic-flask.py --lab="CL1"
