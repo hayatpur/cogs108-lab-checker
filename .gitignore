@@ -1,2 +1,3 @@
 output/*
 labs/submitted/**
+!output/.gitkeep
