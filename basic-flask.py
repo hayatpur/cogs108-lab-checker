@@ -132,7 +132,7 @@ def is_done():
         return json.dumps({'done': True})
     else:
         # do nothing
-        return ''
+        return json.dumps({'done': False})
 
 @app.route('/finished')
 def finished():
