@@ -198,6 +198,9 @@ def main():
     student_names = glob.glob(student_notebooks_path + "/*")
     student_names = [os.path.basename(s) for s in student_names]
 
+    # only keep the student IDs where they have submitted the lab
+    student_names = [s for s in student_names if os.path.exists(student_notebooks_path + "/" + s + "/" + STUDENT_NOTEBOOK_PATTERNS[args.lab])]
+
     MEMORY['student_names'] = sorted(student_names)
     MEMORY['current_student_index'] = 0 
 
@@ -215,7 +218,7 @@ def main():
     # construct a dictionary for the final csv. should have columns for student name, date submitted, and effort grade
     MEMORY['output'] = []
     for student in MEMORY['student_names']:
-        timestamp_path = MEMORY['students'][MEMORY['student_names'][MEMORY['current_student_index']]].replace(os.path.basename(MEMORY['students'][MEMORY['student_names'][MEMORY['current_student_index']]]), 'timestamp.txt')
+        timestamp_path = MEMORY['students'][student].replace(os.path.basename(MEMORY['students'][student]), 'timestamp.txt')
         with open(timestamp_path) as f:
             date_submitted = f.read().strip()
 
