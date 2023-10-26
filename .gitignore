@@ -1,3 +1,5 @@
 output/*
+grades/*
 labs/submitted/**
 !output/.gitkeep
+!grades/.gitkeep
