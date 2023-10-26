@@ -4,3 +4,4 @@ labs/submitted/**
 !output/.gitkeep
 !grades/.gitkeep
 **/.DS_Store
+util/template.csv
