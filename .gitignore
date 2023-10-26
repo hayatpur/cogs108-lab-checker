@@ -3,3 +3,4 @@ grades/*
 labs/submitted/**
 !output/.gitkeep
 !grades/.gitkeep
+**/.DS_Store
