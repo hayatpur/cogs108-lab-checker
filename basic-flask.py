@@ -170,12 +170,14 @@ def main():
         "CL1": "Coding Lab 1/CL1-Tooling.ipynb",
         "CL2": "Coding-Lab-2/CL2-ProgrammingI.ipynb",
         "CL3": "Coding-Lab-3/CL3-Programming.ipynb",
+        "CL4": "Coding-Lab-4/CL4-Collections.ipynb",
     }
 
     ASSIGNMENT_NOTEBOOK_PATH = {
         "CL1": "labs/assignments/CL1-Tooling.ipynb",
         "CL2": "labs/assignments/CL2-ProgrammingI.ipynb",
         "CL3": "labs/assignments/CL3-Programming.ipynb",
+        "CL4": "labs/assignments/CL4-Collections.ipynb",
     }
 
     parser.add_argument("--lab", help="The lab to be graded", choices=STUDENT_NOTEBOOK_PATTERNS.keys())
