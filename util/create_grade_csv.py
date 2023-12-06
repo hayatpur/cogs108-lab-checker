@@ -8,14 +8,19 @@ def main():
         "CL1",
         "CL2",
         "CL3",
-        "CL4"
+        "CL4",
+        "CL5",
+        "CL6",
+        "CL7",
+        "CL8"
     ]
 
     ASSIGNMENT_NAMES = {
         "CL1": "Coding Lab 1",
         "CL2": "Coding Lab 2",
         "CL3": "Coding Lab 3",
-        "CL4": "Coding Lab 4"
+        "CL4": "Coding Lab 4",
+        "CL5": "Coding Lab 5"
     }
 
     parser = argparse.ArgumentParser()

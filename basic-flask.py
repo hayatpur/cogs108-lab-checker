@@ -171,6 +171,10 @@ def main():
         "CL2": "Coding-Lab-2/CL2-ProgrammingI.ipynb",
         "CL3": "Coding-Lab-3/CL3-Programming.ipynb",
         "CL4": "Coding-Lab-4/CL4-Collections.ipynb",
+        "CL5": "Coding-Lab-5/CL5-Loops.ipynb",
+        "CL6": "Coding-Lab-6/CL6-Classes.ipynb",
+        "CL7": "Coding-Lab-7/CL7-CommandLine.ipynb",
+        "CL8": "Coding-Lab-8/CL8-ScientificComputing.ipynb"
     }
 
     ASSIGNMENT_NOTEBOOK_PATH = {
@@ -178,6 +182,10 @@ def main():
         "CL2": "labs/assignments/CL2-ProgrammingI.ipynb",
         "CL3": "labs/assignments/CL3-Programming.ipynb",
         "CL4": "labs/assignments/CL4-Collections.ipynb",
+        "CL5": "labs/assignments/CL5-Loops.ipynb",
+        "CL6": "labs/assignments/CL6-Classes.ipynb",
+        "CL7": "labs/assignments/CL7-CommandLine.ipynb",
+        "CL8": "labs/assignments/CL8-ScientificComputing.ipynb"
     }
 
     parser.add_argument("--lab", help="The lab to be graded", choices=STUDENT_NOTEBOOK_PATTERNS.keys())
