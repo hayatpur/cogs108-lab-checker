@@ -18,6 +18,12 @@ Start the grader:
 python basic-flask.py --lab="CL1"
 ```
 
+To grade only odd or even students, add `--odds` or `--evens` flag. For example:
+
+```
+python basic-flask.py --lab="CL1" --odds
+```
+
 > [!NOTE]
 > It only works on Firefox, it's easiest to set it as your default browser while grading.
 
